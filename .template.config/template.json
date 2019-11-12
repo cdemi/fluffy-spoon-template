@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Gaming Innovation Group",
+  "classifications": [
+    "Solution",
+    "Project",
+    "Orleans",
+    "Silo"
+  ],
+  "name": "FluffySpoon Orleans Silo",
+  "identity": "fs.orleans.silo",
+  "shortName": "fs-silo",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "fluffyspoon.template",
+  "preferNameDirectory": true,
+  "symbols": {
+    "short-name": {
+      "type": "parameter",
+      "isRequired": true,
+      "datatype": "string",
+      "replaces": "{{ServiceName}}",
+      "description": "The Service short name"
+    } 
+  }
+}
