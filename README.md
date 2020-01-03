@@ -46,3 +46,26 @@ To create a solution using the template, use this command:
 ```sh
 dotnet new fs-silo -n fluffyspoon.email --short-name email
 ```
+
+## Sample Services
+
+All the below services are based on this [microservice template](https://github.com/cdemi/fluffy-spoon-template)!
+
+* Registration: [Source Code](https://github.com/cdemi/fluffy-spoon)
+* Profile: [Source Code](https://github.com/cdemi/fluffy-spoon-profile)
+* User Verification: [Source Code](https://github.com/cdemi/fluffy-spoon-userverification)
+* Email: [Source Code](https://github.com/cdemi/fluffy-spoon-email)
+
+To run all the services together:
+
+```sh
+git clone git@github.com:cdemi/fluffy-spoon.git
+git clone git@github.com:cdemi/fluffy-spoon-profile.git
+git clone git@github.com:cdemi/fluffy-spoon-userverification.git
+git clone git@github.com:cdemi/fluffy-spoon-email.git
+
+docker-compose -f fluffy-spoon/docker/docker-compose.yml \
+ -f fluffy-spoon-profile/docker/docker-compose.yml \
+ -f fluffy-spoon-userverification/docker/docker-compose.yml \
+ -f fluffy-spoon-email/docker/docker-compose.yml up
+```
