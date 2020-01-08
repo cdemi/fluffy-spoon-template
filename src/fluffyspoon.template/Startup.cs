@@ -1,5 +1,4 @@
 using demofluffyspoon.contracts;
-using demofluffyspoon.contracts.Grains;
 using GiG.Core.DistributedTracing.Web.Extensions;
 using GiG.Core.HealthChecks.Extensions;
 using GiG.Core.Hosting.Extensions;
@@ -14,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Orleans;
 using Orleans.Hosting;
+using Orleans.Streams.Kafka.Config;
 using OrleansDashboard;
 using HostBuilderContext = Microsoft.Extensions.Hosting.HostBuilderContext;
 
@@ -46,18 +46,22 @@ namespace fluffyspoon.template
         public static void ConfigureOrleans(HostBuilderContext ctx, ISiloBuilder builder)
         {
             var configuration = ctx.Configuration;
-
+            var topicConfiguration = new TopicCreationConfig
+            {
+                AutoCreate = true,
+                Partitions = 8
+            };
+            
             builder.ConfigureCluster(configuration)
                 .UseDashboard(x => x.HostSelf = false)
                 .ConfigureEndpoints()
-                .AddAssemblies(typeof(IProfileGrain))
                 .AddAssemblies(typeof(Program))
                 .AddKafka(Constants.StreamProviderName)
                 .WithOptions(options =>
                 {
                     options.FromConfiguration(ctx.Configuration);
                     // Add Topics
-                    // options.AddTopic(nameof(Event));
+                    // options.AddTopic(nameof(Event), topicConfiguration);
                 })
                 .AddJson()
                 .Build()

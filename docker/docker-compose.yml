@@ -13,8 +13,9 @@ services:
     ports:
       - "5005:8080"
     depends_on:
-    - consul
-    - kafka
+      - consul
+      - kafka
+    restart: on-failure
 
   consul:
     image: consul:latest
@@ -31,9 +32,10 @@ services:
     depends_on:
       - zookeeper
     environment:
-      - KAFKA_ZOOKEEPER_CONNECT= zookeeper:2181
-      - KAFKA_ADVERTISED_LISTENERS= PLAINTEXT://kafka:9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+    restart: on-failure
 
   control-center:
     image: confluentinc/cp-enterprise-control-center:5.3.1
