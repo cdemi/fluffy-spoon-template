@@ -5,7 +5,7 @@ using GiG.Core.Logging.All.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace fluffyspoon.template
+namespace DemoFluffySpoon.Template
 {
     public class Program
     {

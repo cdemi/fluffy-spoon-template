@@ -1,4 +1,5 @@
-using demofluffyspoon.contracts;
+using DemoFluffySpoon.Contracts;
+using DemoFluffySpoon.Template.Grains;
 using GiG.Core.DistributedTracing.Web.Extensions;
 using GiG.Core.HealthChecks.Extensions;
 using GiG.Core.Hosting.Extensions;
@@ -17,7 +18,7 @@ using Orleans.Streams.Kafka.Config;
 using OrleansDashboard;
 using HostBuilderContext = Microsoft.Extensions.Hosting.HostBuilderContext;
 
-namespace fluffyspoon.template
+namespace DemoFluffySpoon.Template
 {
     public class Startup
     {
@@ -55,7 +56,7 @@ namespace fluffyspoon.template
             builder.ConfigureCluster(configuration)
                 .UseDashboard(x => x.HostSelf = false)
                 .ConfigureEndpoints()
-                .AddAssemblies(typeof(Program))
+                .AddAssemblies(typeof(HelloWorldGrain))
                 .AddKafka(Constants.StreamProviderName)
                 .WithOptions(options =>
                 {

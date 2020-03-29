@@ -14,7 +14,7 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "fluffyspoon.template",
+  "sourceName": "DemoFluffySpoon.Template",
   "preferNameDirectory": true,
   "symbols": {
     "short-name": {
