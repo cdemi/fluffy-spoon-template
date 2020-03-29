@@ -3,6 +3,8 @@
 [![Build status](https://img.shields.io/azure-devops/build/christopherdemicoli/8c7d1a1e-f368-46cf-bad7-1f2ed587335d/16)](https://img.shields.io/azure-devops/build/christopherdemicoli/8c7d1a1e-f368-46cf-bad7-1f2ed587335d/16) 
 [![NuGet](https://img.shields.io/nuget/v/demofluffyspoon.contracts.svg)](https://nuget.org/packages/demofluffyspoon.contracts)
 
+FluffySpoon is a set of microservices using [.NET Core 3+](https://github.com/dotnet) and [Microsoft Orleans 3+](https://github.com/dotnet/orleans) for demo purposes.  This project includes the base template to create a basic service using these technologies.
+
 For more information about `dotnet new` templates see [here](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/).
 
 ## __Installation__

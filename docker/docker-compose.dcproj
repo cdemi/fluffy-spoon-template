@@ -5,8 +5,8 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>e9aafc52-977c-4bd7-9ce5-bffcf4b89cb3</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/helloworld</DockerServiceUrl>
-    <DockerServiceName>fluffy_spoon.web</DockerServiceName>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api-docs</DockerServiceUrl>
+    <DockerServiceName>demofluffy_spoon.template</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="../.dockerignore" />
